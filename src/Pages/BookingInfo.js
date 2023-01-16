@@ -582,24 +582,14 @@ const BookingInfo = () => {
                                     id='picker2'
                                     name='date'
                                     onChange={(e) => {
-                                      if (range) {
-                                        setholiday_session(e.value);
-                                      } else {
-                                        let arr = [...holiday_session];
-                                        arr.push(e.value);
-                                        setholiday_session(arr);
-                                      }
+                                      setholiday_session(e.value);
                                     }}
-                                    value={
-                                      !range
-                                        ? holiday_session[index]
-                                        : holiday_session
-                                    }
+                                    value={holiday_session}
                                     minDate={new Date()}
-                                    selectionMode={range ? 'range' : undefined}
+                                    selectionMode={range ? 'range' : 'multiple'}
                                     placeholder='DD/MM/YYYY'
                                   />
-                                  {!(dateInputsnum.length === 1) && (
+                                  {/* {!(dateInputsnum.length === 1) && (
                                     <span
                                       className={`absolute right-1 text-xl  hover:bg-gray-200 cursor-pointer`}
                                       onClick={() => {
@@ -616,7 +606,7 @@ const BookingInfo = () => {
                                     >
                                       <IoIosClose />
                                     </span>
-                                  )}
+                                  )} */}
                                 </div>
                               );
                             })}
@@ -687,23 +677,23 @@ const BookingInfo = () => {
                           <div className='flex space-x-1'>
                             <button
                               disbaled={range ? true : false}
-                              onClick={handleOpen}
-                              className='bg-[#3C5071] w-[53px] h-[54px] text-white rounded-[6px] shadow-[0_4px_4px_rgba(0,0,0,0.3)] uppercase font-[600]'
+                              // onClick={() => {
+                              //   if (!range) {
+                              //     let arr = [...dateInputsnum];
+                              //     arr.push(Math.random());
+                              //     setDateInputNums(arr);
+                              //   }
+                              // }}
+                              className='bg-[#3C5071] w-[60px] h-[54px] text-white rounded-[6px] shadow-[0_4px_4px_rgba(0,0,0,0.3)] uppercase font-[600]'
                             >
-                              View
+                              Add
                             </button>
                             <button
                               disbaled={range ? true : false}
-                              onClick={() => {
-                                if (!range) {
-                                  let arr = [...dateInputsnum];
-                                  arr.push(Math.random());
-                                  setDateInputNums(arr);
-                                }
-                              }}
-                              className='bg-[#3C5071] w-[53px] h-[54px] text-white rounded-[6px] shadow-[0_4px_4px_rgba(0,0,0,0.3)] uppercase font-[600]'
+                              onClick={handleOpen}
+                              className='bg-[#3C5071] w-[60px] h-[54px] text-white rounded-[6px] shadow-[0_4px_4px_rgba(0,0,0,0.3)] uppercase font-[600]'
                             >
-                              Add
+                              View
                             </button>
                           </div>
                           <div className='flex gap-4 xl:-ml-4  mb-0.5'>
