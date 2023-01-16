@@ -2,19 +2,14 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SecondNav from '../Components/Shared/SecondNav';
-import FirstGroup from '../Components/View Mapped/FirstGroup';
 import MappedSite from '../Components/View Mapped/MappedSite';
-import SecondGroup from '../Components/View Mapped/SecondGroup';
 import TableSection from '../Components/View Mapped/TableSection';
-import ThirdGroup from '../Components/View Mapped/ThirdGroup';
 import axios from 'axios';
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 
 import { FiUpload } from 'react-icons/fi';
 const baseURL = `${process.env.REACT_APP_API_URL}place`;
@@ -250,7 +245,7 @@ const ViewMapped = () => {
                   <span>
                     <FiUpload />
                   </span>{' '}
-                  Upload
+                  {site_image.name ? site_image.name : 'Upload'}
                 </p>
                 <input
                   accept='image/*'
@@ -262,10 +257,7 @@ const ViewMapped = () => {
                   name='site_image'
                   id='siteImage'
                 />
-                <span className='absolute bottom-0 my-auto'>
-                  {' '}
-                  {site_image.name}
-                </span>
+                {/* <span className='absolute bottom-0 my-auto'> {}</span> */}
               </label>
 
               <button
@@ -308,7 +300,7 @@ const ViewMapped = () => {
                   <span>
                     <FiUpload />
                   </span>{' '}
-                  Upload
+                  {siteforticket.name ? siteforticket.name : 'Upload'}
                 </p>
                 <input
                   accept='image/*'
@@ -320,10 +312,7 @@ const ViewMapped = () => {
                   name='siteforticket'
                   id='siteforticket'
                 />
-                <span className='absolute bottom-0 my-auto'>
-                  {' '}
-                  {siteforticket.name}
-                </span>
+                {/* <span className='absolute bottom-0 my-auto'> {}</span> */}
               </label>
               <button
                 onClick={handleOpen2}
