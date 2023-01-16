@@ -3,13 +3,35 @@ import SecondNav from '../Components/Shared/SecondNav';
 import { bannerImg } from '../Pages/home/Home2';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-import { FormControl, MenuItem, Select } from '@mui/material';
+import {
+  Box,
+  Button,
+  Fade,
+  FormControl,
+  MenuItem,
+  Modal,
+  Select,
+} from '@mui/material';
 import { FiUpload } from 'react-icons/fi';
 import { getPlaceById } from '../services/getPlaceById';
 import { Calendar } from 'primereact/calendar';
+import Tooltip from '@mui/material/Tooltip';
+import moment from 'moment';
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 const API_URL = process.env.REACT_APP_API_URL;
 const BookingInfo = () => {
+  const handleClose2 = () => setOpen2(false);
   const { id } = useParams();
   const [place, setPlace] = useState({});
   React.useEffect(() => {
@@ -27,7 +49,7 @@ const BookingInfo = () => {
   const [contact_no, setcontact_no] = useState();
   const [email_id, setemail_id] = useState();
   const [booking_for, setbooking_for] = useState();
-  const [visitor_form_type, setvisitor_form_type] = useState();
+  const [visitor_form_type, setvisitor_form_type] = useState('');
   const [role, setrole] = useState();
   const [help_desk_no, sethelp_desk_no] = useState();
   const [winter_session_start_time, setwinter_session_start_time] = useState();
@@ -51,6 +73,7 @@ const BookingInfo = () => {
 
   const options = ['Taj', 'Hawa', 'jm', 'pm', 'lorem'];
   const optionsFor = ['Hawa Mahal'];
+  const optionsFormType = ['Form 1', 'Form 2'];
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     const data = new FormData();
@@ -81,6 +104,9 @@ const BookingInfo = () => {
         console.log(error);
       });
   };
+
+  const [open2, setOpen2] = React.useState(false);
+  const handleOpen2 = () => setOpen2(true);
 
   return (
     <div className='min-h-screen bg-[#F0EBEB]'>
@@ -379,13 +405,37 @@ const BookingInfo = () => {
                         value={visitor_form_type}
                         displayEmpty
                         inputProps={{ 'aria-label': 'Without label' }}
-                        className='w-96 shadow-md  h-12 bg-white !text-gray-400'
+                        className='w-72 shadow-md  h-12 bg-white !text-gray-400'
                       >
-                        {optionsFor?.map((el) => (
+                        {optionsFormType?.map((el) => (
                           <MenuItem value={el}>{el}</MenuItem>
                         ))}
                       </Select>
                     </label>
+                    <button
+                      onClick={handleOpen2}
+                      className='bg-[#3C5071] h-11 px-5 text-white rounded-[6px] shadow-[0_4px_4px_rgba(0,0,0,0.3)] uppercase font-[600]'
+                    >
+                      View
+                    </button>
+                    <Modal
+                      aria-labelledby='transition-modal-title'
+                      aria-describedby='transition-modal-description'
+                      open={open2}
+                      onClose={handleClose2}
+                      closeAfterTransition
+                    >
+                      <Fade in={open2}>
+                        <Box sx={style}>
+                          {visitor_form_type !== '' &&
+                          visitor_form_type === 'Form 1' ? (
+                            <>Form 1</>
+                          ) : (
+                            <>Form 2</>
+                          )}
+                        </Box>
+                      </Fade>
+                    </Modal>
                   </div>
                 </div>
                 <div className='flex items-end justify-start gap-8 w-96 flex-row-reverse'>
@@ -400,9 +450,6 @@ const BookingInfo = () => {
                       // type='number'
                     />
                   </div>
-                  {/* <button className='bg-[#3C5071] h-11 px-5 text-white rounded-[6px] shadow-[0_4px_4px_rgba(0,0,0,0.3)] uppercase font-[600]'>
-                    View
-                  </button> */}
                 </div>
                 <div>
                   <p className='text-[#00000099] text-2xl font-semibold mb-3 capitalize'>
@@ -522,16 +569,56 @@ const BookingInfo = () => {
                           <div className='w-full flex items-start justify-center flex-col col-span-1'>
                             {dateInputsnum?.map(() => {
                               return (
-                                <Calendar
-                                  className='rounded-lg w-[150px] h-[54px]'
-                                  id='picker2'
-                                  name='date'
-                                  onChange={(e) => setholiday_session(e.value)}
-                                  value={holiday_session}
-                                  minDate={new Date()}
-                                  selectionMode={range ? 'range' : undefined}
-                                  placeholder='DD/MM/YYYY'
-                                />
+                                <>
+                                  {range ? (
+                                    <Tooltip
+                                      title={
+                                        holiday_session !== null &&
+                                        `From ${
+                                          holiday_session &&
+                                          moment(holiday_session[0]).format(
+                                            'DD/MM/YYYY'
+                                          )
+                                        } to ${moment(
+                                          holiday_session && holiday_session[1]
+                                        ).format('DD/MM/YYYY')}`
+                                      }
+                                      placement='top'
+                                    >
+                                      <button>
+                                        <Calendar
+                                          className='rounded-lg w-[150px] h-[54px]'
+                                          id='picker2'
+                                          name='date'
+                                          onChange={(e) =>
+                                            setholiday_session(e.value)
+                                          }
+                                          value={holiday_session}
+                                          minDate={new Date()}
+                                          selectionMode={
+                                            range ? 'range' : undefined
+                                          }
+                                          placeholder='DD/MM/YYYY'
+                                        />
+                                      </button>
+                                    </Tooltip>
+                                  ) : (
+                                    <Calendar
+                                      className='rounded-lg w-[150px] h-[54px]'
+                                      id='picker2'
+                                      name='date'
+                                      onChange={(e) =>
+                                        setholiday_session(e.value)
+                                      }
+                                      value={holiday_session}
+                                      minDate={new Date()}
+                                      selectionMode={
+                                        range ? 'range' : undefined
+                                      }
+                                      placeholder='DD/MM/YYYY'
+                                    />
+                                  )}
+                                </>
                               );
                             })}
 
@@ -549,7 +636,7 @@ const BookingInfo = () => {
                                 }
                               }}
                             >
-                              {range ? 'SELECT SINGLE DATE' : 'DATE PERIOD'}
+                              {range ? 'SELECT DATE' : 'DATE PERIOD'}
                             </div>
                           </div>
 

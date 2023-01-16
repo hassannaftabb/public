@@ -233,19 +233,19 @@ const TableComp = () => {
                   align='right'
                   className='border-r-[1px] border-gray-400'
                 >
-                  <div className='flex w-full justify-end gap-x-4'>
+                  <div className='flex w-full justify-end gap-x-1'>
                     <button
-                      className='px-3  text-white bg-[#3C5071] rounded-[4px]'
+                      className='px-2 text-white bg-[#3C5071] rounded-[4px]'
                       onClick={() => setOpen(!open)}
                     >
                       View
                     </button>
-                    <button className='px-3  text-white bg-[#3C5071] rounded-[4px]'>
+                    <button className='px-2 text-white bg-[#3C5071] rounded-[4px]'>
                       Edit
                     </button>
                     <div className='flex flex-col gap-[3px] font-[500]'>
                       <button
-                        className={`text-xs px-2.5 py-[0.5px] bg-[#139907] text-white rounded-[4px] ${
+                        className={`text-xs px-1 py-[0.5px] bg-[#139907] text-white rounded-[4px] ${
                           el?.status == 1 && 'opacity-70 cursor-not-allowed'
                         }`}
                         disabled={el?.status == 1}
@@ -254,7 +254,7 @@ const TableComp = () => {
                         Active
                       </button>
                       <button
-                        className={`text-xs px-2.5 py-[0.5px] bg-[#8A070F] text-white rounded-[4px] ${
+                        className={`text-xs px-1 py-[0.5px] bg-[#8A070F] text-white rounded-[4px] ${
                           el?.status == 0 && 'opacity-70 cursor-not-allowed'
                         }`}
                         onClick={() => updateStatus(el?.placeId, 0)}
