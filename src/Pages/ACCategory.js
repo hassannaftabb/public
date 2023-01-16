@@ -250,7 +250,9 @@ const ACCategory = () => {
                           className='w-[100%] h-[100%] focus:outline-none text-black p-2'
                           type='text'
                           placeholder='Type here'
-                          disabled={accountType === 'Budget Account'}
+                          disabled={
+                            accounts[index].accountType === 'Budget Account'
+                          }
                         />
                       </div>
                       {/* ------ data -------- */}
@@ -263,7 +265,9 @@ const ACCategory = () => {
                           type='text'
                           value={accounts[index].branch}
                           placeholder='Type here'
-                          disabled={accountType === 'Budget Account'}
+                          disabled={
+                            accounts[index].accountType === 'Budget Account'
+                          }
                         />
                       </div>
                       {/* ------ data -------- */}
