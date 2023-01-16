@@ -229,13 +229,11 @@ const ACCategory = () => {
                       <div className=' h-[44px] border-r-[1px] border-gray-400'>
                         <input
                           onChange={(e) => {
-                            if (!(e.target.value < 0)) {
-                              handleChange(index, 'accountNo', e.target.value);
-                            }
+                            handleChange(index, 'accountNo', e.target.value);
                           }}
                           value={accounts[index].accountNo}
                           className='w-[100%] h-[100%] focus:outline-none text-black p-2'
-                          type='number'
+                          type='text'
                           placeholder='Type here'
                           min={0}
                         />

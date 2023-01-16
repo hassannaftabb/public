@@ -131,142 +131,294 @@ const TableComp = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {places?.map((el) => (
-              <TableRow>
-                <TableCell
-                  sx={{
-                    fontSize: '16px',
-                    fontWeight: '500',
-                    color: '#1E1E1E80',
-                  }}
-                  component='th'
-                  scope='row'
-                  align='center'
-                  className='border-r-[1px] border-gray-400'
-                >
-                  {el?.nodalDepartment}
-                </TableCell>
-                <TableCell
-                  sx={{
-                    fontSize: '16px',
-                    fontWeight: '500',
-                    color: '#1E1E1E80',
-                  }}
-                  align='center'
-                  className='border-r-[1px] border-gray-400'
-                >
-                  {el?.placeName}
-                </TableCell>
-                <TableCell
-                  sx={{
-                    fontSize: '16px',
-                    fontWeight: '500',
-                    color: '#1E1E1E80',
-                  }}
-                  align='center'
-                  className='border-r-[1px] border-gray-400'
-                >
-                  Mr. Anil
-                </TableCell>
-                <TableCell
-                  sx={{
-                    fontSize: '16px',
-                    fontWeight: '500',
-                    color: '#1E1E1E80',
-                  }}
-                  align='center'
-                  className='border-r-[1px] border-gray-400'
-                >
-                  {el?.ssoId}
-                </TableCell>
-                <TableCell
-                  sx={{
-                    fontSize: '16px',
-                    fontWeight: '500',
-                    color: '#1E1E1E80',
-                  }}
-                  align='center'
-                  className='border-r-[1px] border-gray-400'
-                >
-                  98xxxxxxxx
-                </TableCell>
-                <TableCell
-                  sx={{
-                    fontSize: '16px',
-                    fontWeight: '500',
-                    color: '#1E1E1E80',
-                  }}
-                  align='center'
-                  className='border-r-[1px] border-gray-400'
-                >
-                  {el?.status == 1 ? 'Active' : 'Deactivated'}
-                </TableCell>
-                <TableCell
-                  sx={{
-                    fontSize: '16px',
-                    fontWeight: '500',
-                    color: '#1E1E1E80',
-                  }}
-                  align='center'
-                  className='border-r-[1px] border-gray-400'
-                >
-                  {el?.ssoId}
-                </TableCell>
-                <TableCell
-                  sx={{
-                    fontSize: '16px',
-                    fontWeight: '500',
-                    color: '#1E1E1E80',
-                    height: '100%',
-                    borderBottomRightRadius: '4px',
-                  }}
-                  align='center'
-                  className='border-r-[1px] border-gray-400'
-                >
-                  {moment(el?.updatedAt).format('DD/MM/YYYY')}
-                </TableCell>
-                <TableCell
-                  sx={{
-                    backgroundColor: 'bg-white',
-                    borderBottom: 0,
-                  }}
-                  align='right'
-                  className='border-r-[1px] border-gray-400'
-                >
-                  <div className='flex w-full justify-end gap-x-1'>
+            {/* {places?.map((el) => ( */}
+            <TableRow>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                }}
+                component='th'
+                scope='row'
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                {/* {el?.nodalDepartment} */}
+                test
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                }}
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                {/* {el?.placeName} */}
+                test
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                }}
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                Mr. Anil
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                }}
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                {/* {el?.ssoId} */}
+                test
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                }}
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                98xxxxxxxx
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                }}
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                {/* {el?.status == 1 ? 'Active' : 'Deactivated'} */}
+                Active
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                }}
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                {/* {el?.ssoId} */}
+                test12121
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                  height: '100%',
+                  borderBottomRightRadius: '4px',
+                }}
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                {/* {moment(el?.updatedAt).format('DD/MM/YYYY')} */}
+                12/11/22
+              </TableCell>
+              <TableCell
+                sx={{
+                  backgroundColor: 'bg-white',
+                  borderBottom: 0,
+                }}
+                align='right'
+                className='border-r-[1px] border-gray-400'
+              >
+                <div className='flex w-full justify-end gap-x-1'>
+                  <button
+                    className='px-2 text-white bg-[#3C5071] rounded-[4px]'
+                    onClick={() => setOpen(!open)}
+                  >
+                    View
+                  </button>
+                  <button className='px-2 text-white bg-[#3C5071] rounded-[4px]'>
+                    Edit
+                  </button>
+                  <div className='flex flex-col gap-[3px] font-[500]'>
                     <button
-                      className='px-2 text-white bg-[#3C5071] rounded-[4px]'
-                      onClick={() => setOpen(!open)}
+                      // className={`text-xs px-1 py-[0.5px] bg-[#139907] text-white rounded-[4px] ${
+                      //   el?.status == 1 && 'opacity-70 cursor-not-allowed'
+                      // }`}
+                      className={`text-xs px-1 py-[0.5px] bg-[#139907] text-white rounded-[4px]}`}
+                      // disabled={el?.status == 1}
+                      // onClick={() => updateStatus(el?.placeId, 1)}
                     >
-                      View
+                      Active
                     </button>
-                    <button className='px-2 text-white bg-[#3C5071] rounded-[4px]'>
-                      Edit
+                    <button
+                      // className={`text-xs px-1 py-[0.5px] bg-[#8A070F] text-white rounded-[4px] ${
+                      //   el?.status == 0 && 'opacity-70 cursor-not-allowed'
+                      // }
+                      // `}
+                      className={`text-xs px-1 py-[0.5px] bg-[#8A070F] text-white rounded-[4px] `}
+                      // onClick={() => updateStatus(el?.placeId, 0)}
+                      // disabled={el?.status == 0}
+                    >
+                      Deactive
                     </button>
-                    <div className='flex flex-col gap-[3px] font-[500]'>
-                      <button
-                        className={`text-xs px-1 py-[0.5px] bg-[#139907] text-white rounded-[4px] ${
-                          el?.status == 1 && 'opacity-70 cursor-not-allowed'
-                        }`}
-                        disabled={el?.status == 1}
-                        onClick={() => updateStatus(el?.placeId, 1)}
-                      >
-                        Active
-                      </button>
-                      <button
-                        className={`text-xs px-1 py-[0.5px] bg-[#8A070F] text-white rounded-[4px] ${
-                          el?.status == 0 && 'opacity-70 cursor-not-allowed'
-                        }`}
-                        onClick={() => updateStatus(el?.placeId, 0)}
-                        disabled={el?.status == 0}
-                      >
-                        Deactive
-                      </button>
-                    </div>
                   </div>
-                </TableCell>
-              </TableRow>
-            ))}
+                </div>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                }}
+                component='th'
+                scope='row'
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                {/* {el?.nodalDepartment} */}
+                test
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                }}
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                {/* {el?.placeName} */}
+                test
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                }}
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                Mr. Anil
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                }}
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                {/* {el?.ssoId} */}
+                test
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                }}
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                98xxxxxxxx
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                }}
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                {/* {el?.status == 1 ? 'Active' : 'Deactivated'} */}
+                Active
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                }}
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                {/* {el?.ssoId} */}
+                test12121
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: '#1E1E1E80',
+                  height: '100%',
+                  borderBottomRightRadius: '4px',
+                }}
+                align='center'
+                className='border-r-[1px] border-gray-400'
+              >
+                {/* {moment(el?.updatedAt).format('DD/MM/YYYY')} */}
+                12/11/22
+              </TableCell>
+              <TableCell
+                sx={{
+                  backgroundColor: 'bg-white',
+                  borderBottom: 0,
+                }}
+                align='right'
+                className='border-r-[1px] border-gray-400'
+              >
+                <div className='flex w-full justify-end gap-x-1'>
+                  <button
+                    className='px-2 text-white bg-[#3C5071] rounded-[4px]'
+                    onClick={() => setOpen(!open)}
+                  >
+                    View
+                  </button>
+                  <button className='px-2 text-white bg-[#3C5071] rounded-[4px]'>
+                    Edit
+                  </button>
+                  <div className='flex flex-col gap-[3px] font-[500]'>
+                    <button
+                      // className={`text-xs px-1 py-[0.5px] bg-[#139907] text-white rounded-[4px] ${
+                      //   el?.status == 1 && 'opacity-70 cursor-not-allowed'
+                      // }`}
+                      className={`text-xs px-1 py-[0.5px] bg-[#139907] text-white rounded-[4px]}`}
+                      // disabled={el?.status == 1}
+                      // onClick={() => updateStatus(el?.placeId, 1)}
+                    >
+                      Active
+                    </button>
+                    <button
+                      // className={`text-xs px-1 py-[0.5px] bg-[#8A070F] text-white rounded-[4px] ${
+                      //   el?.status == 0 && 'opacity-70 cursor-not-allowed'
+                      // }
+                      // `}
+                      className={`text-xs px-1 py-[0.5px] bg-[#8A070F] text-white rounded-[4px] `}
+                      // onClick={() => updateStatus(el?.placeId, 0)}
+                      // disabled={el?.status == 0}
+                    >
+                      Deactive
+                    </button>
+                  </div>
+                </div>
+              </TableCell>
+            </TableRow>
+            {/* ))} */}
           </TableBody>
         </Table>
       </TableContainer>
