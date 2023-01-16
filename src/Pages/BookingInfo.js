@@ -590,7 +590,11 @@ const BookingInfo = () => {
                                         setholiday_session(arr);
                                       }
                                     }}
-                                    value={holiday_session[index]}
+                                    value={
+                                      !range
+                                        ? holiday_session[index]
+                                        : holiday_session
+                                    }
                                     minDate={new Date()}
                                     selectionMode={range ? 'range' : undefined}
                                     placeholder='DD/MM/YYYY'
@@ -631,15 +635,33 @@ const BookingInfo = () => {
                                       Holidays Date
                                     </h1>
                                     {/* ------ data row ------ */}
-                                    <div className='grid grid-cols-2  gap-[1px] border-b-2'>
-                                      {holiday_session?.map((val) => {
-                                        return (
-                                          <h1 className='font-semibold text-[16px] text-[#000000B2] text-center truncate py-2.5 border-r-2'>
-                                            {moment(val).format('DD/MM/YYYY')}
-                                          </h1>
-                                        );
-                                      })}
-                                    </div>
+                                    {!range ? (
+                                      <div className='grid grid-cols-2  gap-[1px] border-b-2'>
+                                        {holiday_session?.map((val) => {
+                                          return (
+                                            <h1 className='font-semibold text-[16px] text-[#000000B2] text-center truncate py-2.5 border-r-2'>
+                                              {moment(val).format('DD/MM/YYYY')}
+                                            </h1>
+                                          );
+                                        })}
+                                      </div>
+                                    ) : (
+                                      <div className='grid grid-cols-3  gap-[1px] border-b-2'>
+                                        <h1 className='font-semibold text-[16px] text-[#000000B2] text-center truncate py-2.5 border-r-2'>
+                                          {moment(holiday_session[0]).format(
+                                            'DD/MM/YYYY'
+                                          )}{' '}
+                                        </h1>
+                                        <span className='flex items-center justify-center text-center'>
+                                          TO
+                                        </span>
+                                        <h1 className='font-semibold text-[16px] text-[#000000B2] text-center truncate py-2.5 border-r-2'>
+                                          {moment(holiday_session[1]).format(
+                                            'DD/MM/YYYY'
+                                          )}
+                                        </h1>
+                                      </div>
+                                    )}
                                     {/* ------ data row ------ */}
                                   </div>
                                 </Box>
