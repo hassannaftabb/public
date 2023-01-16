@@ -51,7 +51,7 @@ const FirstGroup = ({ place }) => {
         </p>
         <input
           placeholder='Type Here'
-          className='focus:outline-none p-3 h-12 rounded overflow-hidden border border-gray-400/70 shadow-md w-96'
+          className='focus:outline-none p-3 h-12 rounded overflow-hidden border border-gray-400/70 shadow-md w-96 bg-white'
           type='text'
           disabled
           // value={place?.address}

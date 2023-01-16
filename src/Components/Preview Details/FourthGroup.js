@@ -18,7 +18,7 @@ const SecondGroup = () => {
         </p>
         <input
           placeholder='Pawan Kumar'
-          className='focus:outline-none h-12 p-3 rounded overflow-hidden border border-gray-400/70 shadow-md w-96'
+          className='focus:outline-none h-12 p-3 rounded overflow-hidden border border-gray-400/70 shadow-md w-96 bg-white'
           type='text'
           disabled
         />
@@ -29,7 +29,7 @@ const SecondGroup = () => {
         </p>
         <input
           placeholder='+91 98XXXXXXXX'
-          className='focus:outline-none h-12 p-3 rounded overflow-hidden border border-gray-400/70 shadow-md w-96'
+          className='focus:outline-none h-12 p-3 rounded overflow-hidden border border-gray-400/70 shadow-md w-96 bg-white'
           type='text'
           disabled
         />
@@ -40,7 +40,7 @@ const SecondGroup = () => {
         </p>
         <input
           placeholder='hawa.mahal22@gmail.com'
-          className='focus:outline-none h-12 p-3 rounded overflow-hidden border border-gray-400/70 shadow-md w-96'
+          className='focus:outline-none h-12 p-3 rounded overflow-hidden border border-gray-400/70 shadow-md w-96 bg-white'
           type='text'
           disabled
         />

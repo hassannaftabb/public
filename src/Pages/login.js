@@ -47,7 +47,7 @@ const Login = () => {
                 type='text'
               />
               {formik.touched.ssoId && Boolean(formik.errors.ssoId) && (
-                <>{formik.errors.ssoId}</>
+                <div>{formik.errors.ssoId}</div>
               )}
             </div>
 
@@ -65,7 +65,7 @@ const Login = () => {
                 type='text'
               />
               {formik.touched.password && Boolean(formik.errors.password) && (
-                <>{formik.errors.password}</>
+                <div>{formik.errors.password}</div>
               )}
             </div>
 

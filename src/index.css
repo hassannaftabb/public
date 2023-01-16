@@ -47,3 +47,8 @@
 #checkbox {
   accent-color: white;
 }
+
+.css-1ca9bd9-MuiTableCell-root {
+  padding: 0px !important;
+  width: 149px;
+}

@@ -4,6 +4,7 @@ import { FiUpload } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 
 const options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const optionsFor = ['Hawa Mahal'];
 
 const FifthGroup = () => {
   // ------ dropdown state -----
@@ -36,20 +37,28 @@ const FifthGroup = () => {
       </div>
       <div>
         <p className='text-[#00000099] text-2xl font-semibold mb-3 capitalize'>
-          visiter form type:
+          visitor form type:
         </p>
-        <div className='flex items-center gap-[24px] focus:outline-none   w-96'>
-          <label className='w-full cursor-pointer' htmlFor='siteImage'>
-            <p className='text-gray-400 text-[#00000080] font-[500] bg-white flex items-center justify-start p-3 gap-[6px] h-12 rounded overflow-hidden border border-gray-400/70 shadow-md '>
-              Attach File
-            </p>
-            <input
-              className='hidden'
-              type='file'
-              name='siteImage'
-              id='siteImage'
+        <div className='flex items-center gap-[10px] focus:outline-none   w-96'>
+          <label className='w-full cursor-pointer' htmlFor='visitor_form_type'>
+            {/* <p className='text-gray-400 text-[#00000080] font-[500] bg-white flex items-center justify-start p-3 gap-[6px] h-12 rounded overflow-hidden border border-gray-400/70 shadow-md '>
+                        Attach File
+                        <span>
+                          <FiUpload />
+                        </span>{' '}
+                      </p> */}
+            <Select
+              // onChange={(e) => setvisitor_form_type(e.target.value)}
+              value={'Hawa Mahal'}
+              displayEmpty
+              inputProps={{ 'aria-label': 'Without label' }}
+              className='w-96 shadow-md  h-12 bg-white !text-gray-400'
               disabled
-            />
+            >
+              {optionsFor?.map((el) => (
+                <MenuItem value={el}>{el}</MenuItem>
+              ))}
+            </Select>
           </label>
         </div>
       </div>
@@ -61,7 +70,7 @@ const FifthGroup = () => {
           </p>
           <input
             placeholder='123-456-7890'
-            className='focus:outline-none h-12 rounded p-3 overflow-hidden border border-gray-400/70 shadow-md w-full'
+            className='focus:outline-none h-12 rounded p-3 overflow-hidden border border-gray-400/70 shadow-md w-full bg-white'
             type='text'
             disabled
           />

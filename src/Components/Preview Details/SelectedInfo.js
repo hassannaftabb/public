@@ -225,7 +225,7 @@ const SelectedInfo = () => {
       </div>
       {/* bottom buttons  */}
       <div className='flex justify-center gap-[10px] lg:gap-[20px] w-[100%] mt-[88px]'>
-        <ButtonMd text='Back' />
+        <ButtonMd text='Edit' />
         <ButtonMd text='Cancel' onClick={() => navigate('/view')} />
         <span onClick={() => navigate('/view')}>
           <ButtonMd text='Submit' />

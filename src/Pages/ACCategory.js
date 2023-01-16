@@ -10,7 +10,7 @@ const baseURL = 'http://localhost:5500/account_details';
 
 const ACCategory = () => {
   // ------ dropdown state ------ //
-  const [accountType, setaccountType] = useState();
+  const [accountType, setaccountType] = useState('Budget Account');
   const [accountName, setaccountName] = useState();
   const [bankName, setbankName] = useState();
   const [accountNo, setaccountNo] = useState();
@@ -205,7 +205,7 @@ const ACCategory = () => {
                         <input
                           onChange={(e) => setaccountNo(e.target.value)}
                           className='w-[100%] h-[100%] focus:outline-none text-black p-2'
-                          type='text'
+                          type='number'
                           placeholder='Type here'
                         />
                       </div>

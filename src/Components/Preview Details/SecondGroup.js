@@ -13,7 +13,7 @@ const SecondGroup = () => {
           placeholder='Jaipur'
           // value={place?.city}
           disabled
-          className='focus:outline-none p-3 h-12 rounded overflow-hidden border border-gray-400/70 shadow-md w-96'
+          className='focus:outline-none p-3 h-12 rounded overflow-hidden border border-gray-400/70 shadow-md w-96 bg-white'
           type='text'
         />
         {/* )} */}
@@ -26,7 +26,7 @@ const SecondGroup = () => {
           placeholder='Hawa Mahal'
           // value={place?.placeName}
           disabled
-          className='focus:outline-none p-3 h-12 rounded overflow-hidden border border-gray-400/70 shadow-md w-96'
+          className='focus:outline-none p-3 h-12 rounded overflow-hidden border border-gray-400/70 shadow-md w-96 bg-white'
           type='text'
         />
       </div>
@@ -38,7 +38,7 @@ const SecondGroup = () => {
         </p>
         <input
           placeholder='26.9239° N, 75.8267° E'
-          className='focus:outline-none p-3 h-12 rounded overflow-hidden border border-gray-400/70 shadow-md w-96'
+          className='focus:outline-none p-3 h-12 rounded overflow-hidden border border-gray-400/70 shadow-md w-96 bg-white'
           type='text'
           // value={`${place?.place_coordinate_latitude},${place?.place_coordinate_longitude} `}
           disabled
@@ -52,7 +52,7 @@ const SecondGroup = () => {
         </p>
         <input
           placeholder='hawa.mahal22@gmail.com'
-          className='focus:outline-none h-12 p-3 rounded overflow-hidden border border-gray-400/70 shadow-md w-96'
+          className='focus:outline-none h-12 p-3 rounded overflow-hidden border border-gray-400/70 shadow-md w-96 bg-white'
           type='text'
           disabled
         />
@@ -62,9 +62,9 @@ const SecondGroup = () => {
           site image:
         </p>
         <div className='flex items-center gap-[24px] focus:outline-none   w-96'>
-          <label className='w-full cursor-pointer' htmlFor='siteImage'>
+          <label className='w-full' htmlFor='siteImage'>
             <p className='text-[14px] text-[#00000080] font-[500] bg-white flex items-center justify-center gap-[6px] h-12 rounded overflow-hidden border border-gray-400/70 shadow-md '>
-              <FiUpload />
+              {/* <FiUpload /> */}
               File Uploaded
             </p>
             <input
@@ -83,9 +83,9 @@ const SecondGroup = () => {
           image for ticket:
         </p>
         <div className='flex items-center gap-[24px] focus:outline-none   w-96'>
-          <label className='w-full cursor-pointer' htmlFor='siteImage'>
+          <label className='w-full' htmlFor='siteImage'>
             <p className='text-[14px] text-[#00000080] font-[500] bg-white flex items-center justify-center gap-[6px] h-12 rounded overflow-hidden border border-gray-400/70 shadow-md '>
-              <FiUpload />
+              {/* <FiUpload /> */}
               File Uploaded
             </p>
             <input

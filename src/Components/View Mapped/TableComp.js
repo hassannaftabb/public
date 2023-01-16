@@ -52,14 +52,15 @@ const TableComp = () => {
     <div className='w-full overflow-auto bg-white p-4 rounded-xl'>
       <TableContainer component={Paper} sx={{ backgroundColor: 'transparent' }}>
         <Table aria-label='simple table'>
-          <TableHead>
+          <TableHead sx={{ width: '60%' }}>
             <TableRow sx={{ background: '#314668' }}>
               <TableCell
                 sx={{ fontSize: '16px', fontWeight: '700', color: 'white' }}
                 align='center'
-                className='border-r-[1px] border-gray-400 rounded-tl-[30px]'
+                className='border-r-[1px] border-gray-400 rounded-tl-[30px] flex flex-col'
               >
-                Nodel Department
+                Nodel <br />
+                Department
               </TableCell>
               <TableCell
                 sx={{ fontSize: '16px', fontWeight: '700', color: 'white' }}
@@ -73,7 +74,8 @@ const TableComp = () => {
                 align='center'
                 className='border-r-[1px] border-gray-400'
               >
-                Site Incharge Name
+                Site Incharge
+                <br /> Name
               </TableCell>
               <TableCell
                 sx={{ fontSize: '16px', fontWeight: '700', color: 'white' }}

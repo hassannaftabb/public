@@ -192,7 +192,7 @@ const BookingInfo = () => {
                   </p> */}
                   <input
                     placeholder='26.9239° N, 75.8267° E'
-                    className='focus:outline-none p-3 h-12 rounded overflow-hidden border border-gray-400/70 shadow-md w-96'
+                    className='focus:outline-none p-3 h-12 rounded overflow-hidden border border-gray-400/70 shadow-md w-96 bg-white'
                     type='text'
                     value={
                       place?.place_coordinate_latitude &&
@@ -212,8 +212,8 @@ const BookingInfo = () => {
                     Address:
                   </p>
                   <input
-                    placeholder='Type Here'
-                    className='focus:outline-none p-3 h-12 rounded overflow-hidden border border-gray-400/70 shadow-md w-96'
+                    // placeholder='Type Here'
+                    className='focus:outline-none p-3 h-12 rounded overflow-hidden border border-gray-400/70 shadow-md w-96 bg-white'
                     type='text'
                     disabled
                     value={place?.address}
@@ -226,10 +226,7 @@ const BookingInfo = () => {
                     site image:
                   </p>
                   <div className='flex items-center gap-[24px] focus:outline-none w-72'>
-                    <label
-                      className='w-full cursor-pointer'
-                      htmlFor='siteImage'
-                    >
+                    <label className='w-full ' htmlFor='siteImage'>
                       <p className='text-[14px] text-[#00000080] font-[500] bg-white flex items-center justify-center gap-[6px] h-12 rounded overflow-hidden border border-gray-400/70 shadow-md '>
                         <span>
                           <FiUpload />
@@ -253,10 +250,7 @@ const BookingInfo = () => {
                     image for ticket:
                   </p>
                   <div className='flex items-center gap-[24px] focus:outline-none  w-72'>
-                    <label
-                      className='w-full cursor-pointer'
-                      htmlFor='siteImage'
-                    >
+                    <label className='w-full' htmlFor='siteImage'>
                       <p className='text-[14px] text-[#00000080] font-[500] bg-white flex items-center justify-center gap-[6px] h-12 rounded overflow-hidden border border-gray-400/70 shadow-md '>
                         <span>
                           <FiUpload />
@@ -305,8 +299,8 @@ const BookingInfo = () => {
                     onChange={(e) => setname(e.target.value)}
                     name='name'
                     value={name}
-                    placeholder='Type Here'
-                    className='focus:outline-none h-12 rounded overflow-hidden border p-2 border-gray-400/70 shadow-md w-96'
+                    // placeholder='Type Here'
+                    className='focus:outline-none h-12 rounded overflow-hidden border p-2 border-gray-400/70 shadow-md w-96 bg-white'
                     type='text'
                     disabled
                   />
@@ -321,8 +315,8 @@ const BookingInfo = () => {
                     onChange={(e) => setcontact_no(e.target.value)}
                     name='contact_no'
                     value={contact_no}
-                    placeholder='Type Here'
-                    className='focus:outline-none h-12 rounded overflow-hidden border p-2 border-gray-400/70 shadow-md w-96'
+                    // placeholder='Type Here'
+                    className='focus:outline-none h-12 rounded overflow-hidden border p-2 border-gray-400/70 shadow-md w-96 bg-white'
                     type='tel'
                     disabled
                   />
@@ -337,8 +331,8 @@ const BookingInfo = () => {
                     onChange={(e) => setemail_id(e.target.value)}
                     name='email'
                     value={email_id}
-                    placeholder='Type Here'
-                    className='focus:outline-none h-12 rounded overflow-hidden border p-2 border-gray-400/70 shadow-md w-96'
+                    // placeholder='Type Here'
+                    className='focus:outline-none h-12 rounded overflow-hidden border p-2 border-gray-400/70 shadow-md w-96 bg-white'
                     type='email'
                     disabled
                   />
@@ -544,20 +538,29 @@ const BookingInfo = () => {
                             <div
                               className='text-black underline text-center ml-2 font-semibold cursor-pointer'
                               onClick={() => {
-                                setRange(true);
-                                setDateInputNums([0]);
+                                if (range) {
+                                  setRange(false);
+                                  setDateInputNums([0]);
+                                  setholiday_session(null);
+                                } else {
+                                  setRange(true);
+                                  setDateInputNums([0]);
+                                  setholiday_session(null);
+                                }
                               }}
                             >
-                              DATE PERIOD
+                              {range ? 'SELECT SINGLE DATE' : 'DATE PERIOD'}
                             </div>
                           </div>
 
                           <button
-                            disbaled={range}
+                            disbaled={range ? true : false}
                             onClick={() => {
-                              let arr = [...dateInputsnum];
-                              arr.push(Math.random());
-                              setDateInputNums(arr);
+                              if (!range) {
+                                let arr = [...dateInputsnum];
+                                arr.push(Math.random());
+                                setDateInputNums(arr);
+                              }
                             }}
                             className='bg-[#3C5071] w-[53px] h-[54px] text-white rounded-[6px] shadow-[0_4px_4px_rgba(0,0,0,0.3)] uppercase font-[600]'
                           >
