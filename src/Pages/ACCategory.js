@@ -307,7 +307,7 @@ const ACCategory = () => {
                           />
                           <input
                             onChange={(e) => {
-                              if (!e.target.value < 0) {
+                              if (!(e.target.value < 0)) {
                                 handleChange(
                                   index,
                                   'indStudent',
@@ -405,7 +405,7 @@ const ACCategory = () => {
               <h3 className='text-[20px] font-[600] text-[#626262]'>
                 Grand Total:
               </h3>
-              <div className='grid grid-cols-4 w-[90vw] lg:w-[450px] bg-white rounded-[6px] shadow-lg border border-[#00000040] h-[40px] text-center'>
+              <div className='grid grid-cols-4 w-[90vw] lg:w-[450px] bg-white rounded-[6px] shadow-lg border border-[#00000040] h-[40px] text-center items-center'>
                 <div className='border-r-[1px] border-[#00000040]'>
                   {grandTotal[0] ? grandTotal[0] : ''}
                 </div>
