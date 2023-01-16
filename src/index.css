@@ -19,9 +19,9 @@
   background-size: contain;
   background-position: center;
 }
-.p-datepicker-header {
+/* .p-datepicker-header {
   display: none !important;
-}
+} */
 
 .p-datepicker-calendar > thead > tr > th {
   color: red;
