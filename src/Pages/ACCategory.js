@@ -273,65 +273,72 @@ const ACCategory = () => {
                         <div className='grid grid-cols-4 h-[100%] border-t-[1px] bg-white text-xs '>
                           <input
                             onChange={(e) => {
-                              if (!(e.target.value < 0)) {
-                                handleChange(
-                                  index,
-                                  'indCitizen',
-                                  e.target.value
-                                );
-                              }
+                              if (e.target.value.match('^[0-9]*$'))
+                                if (!parseInt(e.target.value < 0)) {
+                                  handleChange(
+                                    index,
+                                    'indCitizen',
+                                    e.target.value
+                                  );
+                                }
                             }}
                             value={accounts[index].indCitizen}
                             className='h-full p-2 truncate border-r-[1px] border-gray-400'
-                            type='number'
+                            type='text'
                             placeholder='Indian Citizen'
                             min={0}
                           />
                           <input
                             onChange={(e) => {
-                              if (!(e.target.value < 0)) {
-                                handleChange(
-                                  index,
-                                  'foreignCitizen',
-                                  e.target.value
-                                );
+                              if (e.target.value.match('^[0-9]*$')) {
+                                if (!parseInt(e.target.value < 0)) {
+                                  handleChange(
+                                    index,
+                                    'foreignCitizen',
+                                    e.target.value
+                                  );
+                                }
                               }
                             }}
                             value={accounts[index].foreignCitizen}
                             className='h-full p-2 truncate border-r-[1px] border-gray-400'
-                            type='number'
+                            type='text'
                             placeholder='Foreigner Citizen'
                             min={0}
                           />
                           <input
                             onChange={(e) => {
-                              if (!(e.target.value < 0)) {
-                                handleChange(
-                                  index,
-                                  'indStudent',
-                                  e.target.value
-                                );
+                              if (e.target.value.match('^[0-9]*$')) {
+                                if (!parseInt(e.target.value < 0)) {
+                                  handleChange(
+                                    index,
+                                    'indStudent',
+                                    e.target.value
+                                  );
+                                }
                               }
                             }}
                             value={accounts[index].indStudent}
                             className='h-full p-2 truncate border-r-[1px] border-gray-400'
-                            type='number'
+                            type='text'
                             placeholder='Indian student'
                             min={0}
                           />
                           <input
                             onChange={(e) => {
-                              if (!(e.target.value < 0)) {
-                                handleChange(
-                                  index,
-                                  'foreignStudent',
-                                  e.target.value
-                                );
+                              if (e.target.value.match('^[0-9]*$')) {
+                                if (!parseInt(e.target.value < 0)) {
+                                  handleChange(
+                                    index,
+                                    'foreignStudent',
+                                    e.target.value
+                                  );
+                                }
                               }
                             }}
                             value={accounts[index].foreignStudent}
                             className='h-full p-2 truncate '
-                            type='number'
+                            type='text'
                             placeholder='Foreigner student'
                             min={0}
                           />
