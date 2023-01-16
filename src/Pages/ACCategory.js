@@ -228,13 +228,16 @@ const ACCategory = () => {
                       {/* ------ data -------- */}
                       <div className=' h-[44px] border-r-[1px] border-gray-400'>
                         <input
-                          onChange={(e) =>
-                            handleChange(index, 'accountNo', e.target.value)
-                          }
+                          onChange={(e) => {
+                            if (!(e.target.value < 0)) {
+                              handleChange(index, 'accountNo', e.target.value);
+                            }
+                          }}
                           value={accounts[index].accountNo}
                           className='w-[100%] h-[100%] focus:outline-none text-black p-2'
                           type='number'
                           placeholder='Type here'
+                          min={0}
                         />
                       </div>
                       {/* ------ data -------- */}
@@ -267,48 +270,68 @@ const ACCategory = () => {
                       <div className='col-span-3 h-[44px] '>
                         <div className='grid grid-cols-4 h-[100%] border-t-[1px] bg-white text-xs '>
                           <input
-                            onChange={(e) =>
-                              handleChange(index, 'indCitizen', e.target.value)
-                            }
+                            onChange={(e) => {
+                              if (!(e.target.value < 0)) {
+                                handleChange(
+                                  index,
+                                  'indCitizen',
+                                  e.target.value
+                                );
+                              }
+                            }}
                             value={accounts[index].indCitizen}
                             className='h-full p-2 truncate border-r-[1px] border-gray-400'
                             type='number'
                             placeholder='Indian Citizen'
+                            min={0}
                           />
                           <input
-                            onChange={(e) =>
-                              handleChange(
-                                index,
-                                'foreignCitizen',
-                                e.target.value
-                              )
-                            }
+                            onChange={(e) => {
+                              if (!(e.target.value < 0)) {
+                                handleChange(
+                                  index,
+                                  'foreignCitizen',
+                                  e.target.value
+                                );
+                              }
+                            }}
                             value={accounts[index].foreignCitizen}
                             className='h-full p-2 truncate border-r-[1px] border-gray-400'
                             type='number'
                             placeholder='Foreigner Citizen'
+                            min={0}
                           />
                           <input
-                            onChange={(e) =>
-                              handleChange(index, 'indStudent', e.target.value)
-                            }
+                            onChange={(e) => {
+                              if (!e.target.value < 0) {
+                                handleChange(
+                                  index,
+                                  'indStudent',
+                                  e.target.value
+                                );
+                              }
+                            }}
                             value={accounts[index].indStudent}
                             className='h-full p-2 truncate border-r-[1px] border-gray-400'
                             type='number'
                             placeholder='Indian student'
+                            min={0}
                           />
                           <input
-                            onChange={(e) =>
-                              handleChange(
-                                index,
-                                'foreignStudent',
-                                e.target.value
-                              )
-                            }
+                            onChange={(e) => {
+                              if (!(e.target.value < 0)) {
+                                handleChange(
+                                  index,
+                                  'foreignStudent',
+                                  e.target.value
+                                );
+                              }
+                            }}
                             value={accounts[index].foreignStudent}
                             className='h-full p-2 truncate '
                             type='number'
                             placeholder='Foreigner student'
+                            min={0}
                           />
                         </div>
                       </div>
