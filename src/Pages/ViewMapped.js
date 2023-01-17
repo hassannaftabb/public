@@ -109,26 +109,6 @@ const ViewMapped = () => {
           <div className='flex flex-col lg:flex-row items-center gap-[10px]'>
             <div>
               <p className=' text-[#00000099] text-2xl font-semibold mb-3 capitalize'>
-                tourist place type:
-              </p>
-              <FormControl className='' name='tourist_place_type'>
-                <InputLabel id='tourist-label'>Select Here</InputLabel>
-                <Select
-                  onChange={(e) => settourist_place_type(e.target.value)}
-                  value={tourist_place_type}
-                  // inputProps={{ 'aria-label': 'Without label' }}
-                  className='w-96 shadow-md h-12 bg-white !text-gray-400'
-                  label='Select Here'
-                  labelId='tourist-label'
-                >
-                  {options?.map((el) => (
-                    <MenuItem value={el}>{el}</MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
-            </div>
-            <div>
-              <p className=' text-[#00000099] text-2xl font-semibold mb-3 capitalize'>
                 nodal department:
               </p>
               <FormControl className='' name='nodel_department'>
@@ -140,6 +120,26 @@ const ViewMapped = () => {
                   // inputProps={{ 'aria-label': 'Without label' }}
                   className='w-96 shadow-md h-12 bg-white !text-gray-400'
                   label='Select Here'
+                >
+                  {options?.map((el) => (
+                    <MenuItem value={el}>{el}</MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </div>
+            <div>
+              <p className=' text-[#00000099] text-2xl font-semibold mb-3 capitalize'>
+                tourist place type:
+              </p>
+              <FormControl className='' name='tourist_place_type'>
+                <InputLabel id='tourist-label'>Select Here</InputLabel>
+                <Select
+                  onChange={(e) => settourist_place_type(e.target.value)}
+                  value={tourist_place_type}
+                  // inputProps={{ 'aria-label': 'Without label' }}
+                  className='w-96 shadow-md h-12 bg-white !text-gray-400'
+                  label='Select Here'
+                  labelId='tourist-label'
                 >
                   {options?.map((el) => (
                     <MenuItem value={el}>{el}</MenuItem>
@@ -177,8 +177,8 @@ const ViewMapped = () => {
               place name:
             </p>
             <FormControl className=''>
-              <InputLabel id='place-label'>Select Here</InputLabel>
-              <Select
+              {/* <InputLabel id='place-label'>Select Here</InputLabel> */}
+              {/* <Select
                 onChange={(e) => setplace_name(e.target.value)}
                 value={place_name}
                 // inputProps={{ 'aria-label': 'Without label' }}
@@ -189,7 +189,14 @@ const ViewMapped = () => {
                 {options?.map((el) => (
                   <MenuItem value={el}>{el}</MenuItem>
                 ))}
-              </Select>
+              </Select> */}
+              <input
+                onChange={(e) => setplace_name(e.target.value)}
+                name='address'
+                placeholder='Type Here'
+                className='font-bold focus:outline-none p-3 h-12 rounded overflow-hidden border border-gray-400/70 shadow-md w-96'
+                type='text'
+              />
             </FormControl>
           </div>
           <div>

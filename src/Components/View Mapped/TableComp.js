@@ -125,7 +125,7 @@ const TableComp = () => {
                   backgroundColor: 'white',
                   borderBottom: 0,
                 }}
-                className='border-r-[1px] border-gray-400'
+                className='border-gray-400'
                 align='right'
               ></TableCell>
             </TableRow>
@@ -237,7 +237,7 @@ const TableComp = () => {
                   borderBottom: 0,
                 }}
                 align='right'
-                className='border-r-[1px] border-gray-400'
+                className='border-gray-400'
               >
                 <div className='flex w-full justify-end gap-x-1'>
                   <button
@@ -380,7 +380,7 @@ const TableComp = () => {
                   borderBottom: 0,
                 }}
                 align='right'
-                className='border-r-[1px] border-gray-400'
+                className=' border-gray-400'
               >
                 <div className='flex w-full justify-end gap-x-1'>
                   <button
